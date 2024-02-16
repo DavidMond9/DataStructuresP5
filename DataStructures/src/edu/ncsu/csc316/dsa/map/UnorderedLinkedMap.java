@@ -57,7 +57,6 @@ public class UnorderedLinkedMap<K, V> extends AbstractMap<K, V>{
         Position<Entry<K, V>> p = lookUp(key);
         if(p != null) {
         	V oldVal = p.getElement().getValue();
-        	p.getElement().setValue(value);
         	moveToFront(p);
         	return oldVal;
         }
