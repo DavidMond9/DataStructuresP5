@@ -5,7 +5,6 @@ import java.util.Iterator;
 import org.junit.Before;
 import org.junit.Test;
 import edu.ncsu.csc316.dsa.data.Student;
-import edu.ncsu.csc316.dsa.data.StudentIDComparator;
 
 /**
  * Test class for SearchTableMap

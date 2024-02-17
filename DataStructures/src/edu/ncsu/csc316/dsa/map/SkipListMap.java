@@ -96,7 +96,7 @@ public class SkipListMap<K extends Comparable<K>, V> extends AbstractOrderedMap<
     @Override
     public V get(K key) {
         SkipListNode<K, V> temp = lookUp(key);
-        if(temp.getEntry().getKey().equals(key) && !isSentinel(temp)) {
+        if(!isSentinel(temp) && temp.getEntry().getKey().equals(key)) {
         	return temp.getEntry().getValue();
         }
         return null;
@@ -157,7 +157,7 @@ public class SkipListMap<K extends Comparable<K>, V> extends AbstractOrderedMap<
     @Override
     public V remove(K key) {
         SkipListNode<K, V> temp = lookUp(key);
-        if(temp.getEntry().getKey() == key && !isSentinel(temp)) {
+        if(!isSentinel(temp) && temp.getEntry().getKey() == key) {
         	V res = temp.getEntry().getValue();
         	temp.prev.next = temp.next;
         	temp.next.prev = temp.prev;
