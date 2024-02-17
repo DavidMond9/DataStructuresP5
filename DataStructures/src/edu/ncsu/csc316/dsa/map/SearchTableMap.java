@@ -42,11 +42,24 @@ public class SearchTableMap<K extends Comparable<K>, V> extends AbstractOrderedM
     }
 
     private int lookUp(K key) {
-        //TODO: complete this method
+        int search = binarySearchHelper(0, list.size() - 1, key);
+        return search;
     }
 
     private int binarySearchHelper(int min, int max, K key) {
-        //TODO: complete this method
+        if(min > max) {
+        	return -1 * (min + 1);
+        }
+         int mid = (max + min) / 2;
+         if(compare(list.get(mid).getKey(), key) == 0) {
+        	 return mid;
+         }
+         else if(compare(list.get(mid).getKey(), key) > 0){
+        	 return binarySearchHelper(min, mid - 1, key);
+         }
+         else {
+        	 return binarySearchHelper(mid + 1, max, key);
+         }
     }
 
     @Override
@@ -57,7 +70,10 @@ public class SearchTableMap<K extends Comparable<K>, V> extends AbstractOrderedM
     @Override
     public V get(K key) {
         int index = lookUp(key);
-        //TODO: complete this method
+        if(index < 0) {
+        	return null;
+        }
+        return list.get(index).getValue();
     }
 
     @Override
@@ -72,13 +88,28 @@ public class SearchTableMap<K extends Comparable<K>, V> extends AbstractOrderedM
     @Override
     public V put(K key, V value) {
         int index = lookUp(key);
-        //TODO: complete this method
+        if(index < 0) {
+        	list.add((index * -1) - 1, new MapEntry<>(key, value));
+        	return null;
+        }
+        else {
+        	V oldVal = list.get(index).getValue();
+        	list.set(index, new MapEntry<>(key, value));
+        	return oldVal;
+        }
     }
 
     @Override
     public V remove(K key) {
         int index = lookUp(key);
-        //TODO: complete this method
+        if(index < 0) {
+        	return null;
+        }
+        else {
+        	V res = list.get(index).getValue();
+        	list.remove(index);
+        	return res;
+        }
     }
     
     @Override

@@ -40,8 +40,6 @@ public class SearchTableMapTest {
         assertNull(map.put(3, "string3"));
         assertEquals("SearchTableMap[3]", map.toString());
         assertEquals(1, map.size());
-        
-        //TODO: complete this test case
     }
 
     /**
@@ -56,12 +54,10 @@ public class SearchTableMapTest {
         assertNull(map.put(4, "string4"));
         assertNull(map.put(1, "string1"));
         assertFalse(map.isEmpty());
+        assertEquals("SearchTableMap[1, 2, 3, 4, 5]", map.toString());     
+        assertEquals("string1", map.get(1));
         assertEquals("SearchTableMap[1, 2, 3, 4, 5]", map.toString());
         
-        assertEquals("string1",map.get(1));
-        assertEquals("SearchTableMap[1, 2, 3, 4, 5]", map.toString());
-        
-        //TODO: complete this test case
     }
 
     /**
@@ -78,7 +74,9 @@ public class SearchTableMapTest {
         assertFalse(map.isEmpty());
         assertEquals("SearchTableMap[1, 2, 3, 4, 5]", map.toString());
         
-        //TODO: complete this test case
+        assertEquals(map.remove(2), "string2");
+        assertEquals(map.size(), 4);
+        assertEquals(map.remove(5), "string5");
     }
     
     /**
@@ -87,13 +85,21 @@ public class SearchTableMapTest {
      */
     @Test
     public void testStudentMap() {
-        Student s1 = new Student("J","K", 1, 0, 0, "jk");
-        Student s2 = new Student("J","S", 2, 0, 0, "js");
-        Student s3 = new Student("S","H", 3, 0, 0, "sh");
-        Student s4 = new Student("J","J", 4, 0, 0, "jj");
-        Student s5 = new Student("L","B", 5, 0, 0, "lb");
+        Student s1 = new Student("J", "K", 1, 0, 0, "jk");
+        Student s2 = new Student("J", "S", 2, 0, 0, "js");
+        Student s3 = new Student("S", "H", 3, 0, 0, "sh");
+        Student s4 = new Student("J", "J", 4, 0, 0, "jj");
+        Student s5 = new Student("L", "B", 5, 0, 0, "lb");
         
-        //TODO: complete this test case
+        studentMap.put(s1,  0);
+        studentMap.put(s2, 1);
+        studentMap.put(s3, 2);
+        studentMap.put(s4, 3);
+        studentMap.put(s5, 4);
+        assertEquals(studentMap.size(), 5);
+        assertEquals((int)studentMap.remove(s5), 4);
+        assertEquals((int)studentMap.get(s2), 1);
+        
         // Suggestions: since search table map keys are Comparable,
         // make sure the search table works with Comparable objects like Students
     }
@@ -103,13 +109,20 @@ public class SearchTableMapTest {
      */ 
     @Test
     public void testIterator() {
-        assertNull(map.put(3, "string3"));
+    	assertNull(map.put(3, "string3"));
         assertNull(map.put(5, "string5"));
         assertNull(map.put(2, "string2"));
         assertNull(map.put(4, "string4"));
         assertNull(map.put(1, "string1"));
         
-        //TODO: complete this test case
+        Iterator<Integer> it = map.iterator();
+        assertTrue(it.hasNext());
+        assertEquals((int)it.next(), 1);
+        assertEquals((int)it.next(), 2);
+        assertEquals((int)it.next(), 3);
+        assertEquals((int)it.next(), 4);
+        assertEquals((int)it.next(), 5);
+        assertFalse(it.hasNext());
     }
 
     /**
@@ -128,8 +141,6 @@ public class SearchTableMapTest {
         Map.Entry<Integer, String> entry = it.next();
         assertEquals(1, (int)(entry.getKey()));
         assertEquals("string1", (String)(entry.getValue()));
-
-        //TODO: complete this test case
     }
 
     /**
@@ -145,7 +156,12 @@ public class SearchTableMapTest {
         
         Iterator<String> it = map.values().iterator();
         assertTrue(it.hasNext());
+        assertEquals(it.next(), "string1");
+        assertEquals(it.next(), "string2");
+        assertEquals(it.next(), "string3");
+        assertEquals(it.next(), "string4");
+        assertEquals(it.next(), "string5");
+        assertFalse(it.hasNext());
         
-        //TODO: complete this test case
     }
 }
