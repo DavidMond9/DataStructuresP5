@@ -128,7 +128,7 @@ public abstract class AbstractMap<K, V> implements Map<K, V> {
 
     protected class KeyIterator implements Iterator<K> {
 
-        private Iterator<Entry<K,V>> it;
+        private Iterator <Entry<K, V>> it;
         
         public KeyIterator() {
             it = entrySet().iterator();
@@ -158,7 +158,7 @@ public abstract class AbstractMap<K, V> implements Map<K, V> {
      *
      */
     protected class ValueIterator implements Iterator<V> {
-    	private Iterator<Entry<K,V>> it;
+    	private Iterator <Entry<K, V>> it;
         
         public ValueIterator() {
             it = entrySet().iterator();

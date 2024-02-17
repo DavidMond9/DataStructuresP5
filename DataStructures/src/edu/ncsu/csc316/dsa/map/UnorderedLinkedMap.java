@@ -18,7 +18,7 @@ import edu.ncsu.csc316.dsa.list.positional.PositionalList;
  * @param <K> the type of keys stored in the map
  * @param <V> the type of values that are associated with keys in the map
  */
-public class UnorderedLinkedMap<K, V> extends AbstractMap<K, V>{
+public class UnorderedLinkedMap<K, V> extends AbstractMap<K, V> {
 
     private PositionalList<Entry<K, V>> list;
     
