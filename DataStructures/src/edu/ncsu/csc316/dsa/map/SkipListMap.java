@@ -232,11 +232,26 @@ public class SkipListMap<K extends Comparable<K>, V> extends AbstractOrderedMap<
 
     private static class SkipListNode<K, V> {
 
-        private Entry <K, V> entry;
-        private SkipListNode <K, V> above;
-        private SkipListNode <K, V> below;
-        private SkipListNode <K, V> prev;
-        private SkipListNode <K, V> next;
+    	/**
+    	 * Entry for the SkipListNode.
+    	 */
+        private Entry<K, V> entry;
+        /**
+         * Node above the current SkipListNode.
+         */
+        private SkipListNode<K, V> above;
+        /**
+         * Node below the current SkipListNode.
+         */
+        private SkipListNode<K, V> below;
+        /**
+         * Node previous to the current SkipListNode.
+         */
+        private SkipListNode<K, V> prev;
+        /**
+         * Node next to the current SkipListNode.
+         */
+        private SkipListNode<K, V> next;
 
         public SkipListNode(Entry<K, V> entry) {
             setEntry(entry);

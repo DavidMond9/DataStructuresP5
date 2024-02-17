@@ -27,8 +27,13 @@ public abstract class AbstractMap<K, V> implements Map<K, V> {
      * @param <V> the type of value stored in the entry
      */
     protected static class MapEntry<K, V> implements Entry<K, V> {
-
+        /**
+         * Key for the MapEntry.
+         */
         private K key;
+        /**
+         * Value for the MapEntry.
+         */
         private V value;
 
         /**
@@ -87,6 +92,9 @@ public abstract class AbstractMap<K, V> implements Map<K, V> {
      */
     protected class EntryCollection implements Iterable<Entry<K, V>> {
 
+    	/**
+    	 * Represents the list for the EntryCollection.
+    	 */
         private List<Entry<K, V>> list;
 
         public EntryCollection() {
@@ -103,6 +111,9 @@ public abstract class AbstractMap<K, V> implements Map<K, V> {
 
         private class EntryCollectionIterator implements Iterator<Entry<K, V>> {
 
+        	/**
+        	 * Iterator that carries EntryCollections.
+        	 */
             private Iterator<Entry<K, V>> it;
 
             public EntryCollectionIterator() {
@@ -128,7 +139,10 @@ public abstract class AbstractMap<K, V> implements Map<K, V> {
 
     protected class KeyIterator implements Iterator<K> {
 
-        private Iterator <Entry<K, V>> it;
+    	/**
+    	 * Iterator that carries keys.
+    	 */
+        private Iterator<Entry<K, V>> it;
         
         public KeyIterator() {
             it = entrySet().iterator();
@@ -158,7 +172,10 @@ public abstract class AbstractMap<K, V> implements Map<K, V> {
      *
      */
     protected class ValueIterator implements Iterator<V> {
-    	private Iterator <Entry<K, V>> it;
+    	/**
+    	 * Iterator that carries values.
+    	 */
+    	private Iterator<Entry<K, V>> it;
         
         public ValueIterator() {
             it = entrySet().iterator();

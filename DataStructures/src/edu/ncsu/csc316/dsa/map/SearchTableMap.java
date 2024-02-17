@@ -19,6 +19,9 @@ import edu.ncsu.csc316.dsa.list.ArrayBasedList;
  */
 public class SearchTableMap<K extends Comparable<K>, V> extends AbstractOrderedMap<K, V> {
 
+	/**
+	 * List that represents the SearchTableMap.
+	 */
     private ArrayBasedList<Entry<K, V>> list;
 
     /**

@@ -19,6 +19,9 @@ import edu.ncsu.csc316.dsa.map.AbstractMap.MapEntry;
  */
 public class UnorderedLinkedMapTest {
 
+	/**
+	 * Map for integer, string.
+	 */
     private Map<Integer, String> map;
     
     /**

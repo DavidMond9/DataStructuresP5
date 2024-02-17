@@ -16,8 +16,13 @@ import edu.ncsu.csc316.dsa.data.Student;
  *
  */
 public class SkipListMapTest {
-
+	/**
+	 * Map for integer, string.
+	 */
     private Map<Integer, String> map;
+    /**
+     * Student map to test students.
+     */
     private Map<Student, Integer> studentMap;
     
     /**

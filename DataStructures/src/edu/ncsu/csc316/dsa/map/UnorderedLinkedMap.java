@@ -20,8 +20,14 @@ import edu.ncsu.csc316.dsa.list.positional.PositionalList;
  */
 public class UnorderedLinkedMap<K, V> extends AbstractMap<K, V> {
 
+	/**
+	 * List variable that represents the UnorderedLinkedMap.
+	 */
     private PositionalList<Entry<K, V>> list;
     
+    /**
+     * Constructor for UnorderedLinkedMap.
+     */
     public UnorderedLinkedMap() {
         this.list = new PositionalLinkedList<Entry<K, V>>();
     }

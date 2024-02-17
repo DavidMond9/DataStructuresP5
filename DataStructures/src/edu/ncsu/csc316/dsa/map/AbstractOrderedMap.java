@@ -17,6 +17,9 @@ import java.util.Comparator;
  */
 public abstract class AbstractOrderedMap<K extends Comparable<K>, V> extends AbstractMap<K, V> {
 
+	/**
+	 * Comparator to compare two keys and values.
+	 */
     private Comparator<K> compare;
 
     /**
